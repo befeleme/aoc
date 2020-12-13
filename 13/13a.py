@@ -6,13 +6,13 @@ departure = int(contents[0])
 buses = contents[1].split(",")
 
 # dummy big value to start with comparing
-next = 10000000000000000
+closest = 10000000000000000
 for bus in buses:
     if bus != "x":
         bus = int(bus)
-        next_cyclus = ((departure // bus) * bus + bus) - departure
-        if next_cyclus < next:
-            next = next_cyclus
+        next_cycle = ((departure // bus) * bus + bus) - departure
+        if next_cycle < closest:
+            closest = next_cycle
             bus_no = bus
 
-print(bus_no*next)
+print(bus_no*closest)
