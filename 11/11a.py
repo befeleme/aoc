@@ -53,7 +53,7 @@ def check_state(seat):
     neighbours = find_neighbours(seat)
     for neighbour in neighbours:
         if not is_empty(neighbour):
-            occupied +=1
+            occupied += 1
     if occupied >= 4:
         to_release.append(seat)
     elif occupied == 0:
