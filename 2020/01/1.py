@@ -1,4 +1,4 @@
-"""Specifically, they need you to find the two/three entries that sum to 2020 and then multiply those two/three numbers together."""
+"""Specifically, they need you to find the two/three entries that sum to aoc and then multiply those two/three numbers together."""
 
 import itertools
 

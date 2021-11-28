@@ -1,5 +1,5 @@
-# aoc2020
+# aoc
 
-Advent of Code 2020 - my solutions in Python
+Advent of Code - my solutions in Python
 
-Puzzle source: https://adventofcode.com/2020
+Puzzle source: https://adventofcode.com/
