@@ -30,8 +30,7 @@ def flash(coor, flashed):
     else:
         for coor in flashed:
             octopuses[coor] = 0
-        return flashed
-
+        return
 
 def step():
     # Energy level of each octopus rises
