@@ -1,0 +1,251 @@
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 11
+eql x w
+eql x 0
+mul y 0  0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0  0
+add y w
+add y 8
+mul y x
+add z y  (ends in 9-17)
+
+inp w  (1-9)
+mul x 0  0
+add x z  9-17
+mod x 26 9-17
+div z 1  9-17
+add x 11 20-28
+eql x w  0
+eql x 0  1
+mul y 0  0
+add y 25  25
+mul y x  25
+add y 1  26
+mul z y  9x26 - 17x26
+mul y 0  0
+add y w  1-9
+add y 7  8-16
+mul y x  8-16
+add z y  9x26 - 17x26 + 8/16
+
+inp w
+mul x 0  0
+add x z
+mod x 26
+div z 1
+add x 14
+eql x w
+eql x 0
+mul y 0  0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0  0
+add y w
+add y 4
+mul y x
+add z y
+---
+inp w
+mul x 0  0
+add x z  
+mod x 26
+div z 26
+add x -11
+eql x w
+eql x 0
+mul y 0  0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0  0
+add y w
+add y 4
+mul y x
+add z y
+
+inp w   1-9
+mul x 0  0
+add x z  
+mod x 26  0-26
+div z 1
+add x 12  12-38
+eql x w   0
+eql x 0   1
+mul y 0  0
+add y 25  25
+mul y x  25
+add y 1  26
+mul z y  x26
+mul y 0  0
+add y w  1-9
+add y 1  2-10
+mul y x  2-10
+add z y  
+
+inp w
+mul x 0  0
+add x z  
+mod x 26
+div z 26
+add x -1
+eql x w
+eql x 0
+mul y 0  0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 10
+mul y x
+add z y
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 10
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 8
+mul y x
+add z y
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -3
+eql x w
+eql x 0
+mul y 0  0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0  0
+add y w
+add y 12
+mul y x
+add z y
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -4
+eql x w
+eql x 0
+mul y 0  0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0  0
+add y w
+add y 10
+mul y x
+add z y
+
+(1-2)
+inp w
+mul x 0  0
+add x z  
+mod x 26  14-15 or 14-23
+div z 26
+add x -13
+eql x w
+eql x 0
+mul y 0  0
+add y 25 25
+mul y x  25 or 0
+add y 1  26 or 1
+mul z y  zx26 or z
+mul y 0  0
+add y w  1-2
+add y 15 16-17
+mul y x  0 or 16-17
+add z y    z % 26 = 9-17
+
+(1-9)
+inp w
+mul x 0  0
+add x z   z % 26 = 9-17
+mod x 26  9-17 
+div z 26  
+add x -8  9-17
+eql x w   1
+eql x 0   0
+mul y 0   0
+add y 25  25
+mul y x   0
+add y 1   1
+mul z y   ?
+mul y 0  0
+add y w  1-9
+add y 4  5-13
+mul y x  0
+add z y  0
+
+(2-9)
+inp w
+mul x 0  0
+add x z  0
+mod x 26 0
+div z 1  0
+add x 13 13
+eql x w  0 - will never be eql w
+eql x 0  1
+mul y 0  0
+add y 25 25
+mul y x  25
+add y 1  26
+mul z y  z x 26 - here I want 0
+mul y 0  0
+add y w  2-9
+add y 10 12-19
+mul y x  12-19
+add z y  (0 + 12-19) = 12-19
+
+(1-8)
+inp w
+mul x 0  0
+add x z   12-19
+mod x 26  12-19 (anything x 26)
+div z 26  z < 26 results in 0
+add x -11 results in w
+eql x w  (0 or 1) i want here 1 x == w
+eql x 0  (switch 1 or 0) I want here 0
+mul y 0  0
+add y 25 25
+mul y x  (25 or 0)
+add y 1  (26 or 1)
+mul z y  (here I want z to be 0?)
+mul y 0  0
+add y w  1-9
+add y 9  9-18
+mul y x  9-18 or 0  0
+add z y 0
