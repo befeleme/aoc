@@ -20,7 +20,7 @@ for route in routes:
 
 all_subtotals = set()
 
-def count_distances(subtotal, all_dests, visited_destinations):
+def count_distances(subtotal, visited_destinations):
     # base condition = we've traversed all the way through
     if len(visited_destinations) == len(all_dests):
         all_subtotals.add(subtotal)
@@ -32,10 +32,10 @@ def count_distances(subtotal, all_dests, visited_destinations):
             new_subtotal = subtotal + route_map[tuple(sorted([current_departure, next_dest]))]
             new_visited_dests = list(visited_destinations)
             new_visited_dests.append(next_dest)
-            count_distances(new_subtotal, all_dests, new_visited_dests)
+            count_distances(new_subtotal, new_visited_dests)
 
 for departure in all_dests:
-    count_distances(0, all_dests, [departure])
+    count_distances(0, [departure])
 
 print(min(all_subtotals))
 print(max(all_subtotals))
